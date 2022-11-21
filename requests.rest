@@ -1,0 +1,156 @@
+POST http://localhost:8000/api/v1/sign-up
+Content-Type: application/json
+
+{
+    "username": "ferdek23",
+    "password": "Felicioba123"
+}
+
+###
+POST http://localhost:8000/api/v1/login
+Content-Type: application/json
+
+{
+    "username": "ferdek23",
+    "password": "Felicioba123"
+}
+
+###
+POST http://localhost:8000/api/v1/message/channel/id/11
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Mg.GOmcV-8-pQe6r0sMreqG4CXPuy04WgBX5rF6UR4RpJs
+
+{
+    "message": 1
+}
+
+###
+PATCH  http://localhost:8000/api/v1/message/id/23
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Mg.GOmcV-8-pQe6r0sMreqG4CXPuy04WgBX5rF6UR4RpJs
+
+{
+    "message": "DRAGON BALL LEGEND OF TOKA TOKA DNANG"
+}
+
+###
+DELETE   http://localhost:8000/api/v1//message/id/22
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Mg.GOmcV-8-pQe6r0sMreqG4CXPuy04WgBX5rF6UR4RpJs
+
+
+###
+GET http://localhost:8000/api/v1/message/channel/id/11
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Mg.GOmcV-8-pQe6r0sMreqG4CXPuy04WgBX5rF6UR4RpJs
+
+###
+POST http://localhost:8000/api/v1/channel/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Mg.GOmcV-8-pQe6r0sMreqG4CXPuy04WgBX5rF6UR4RpJs
+
+{
+    "channelName": "Sznycki"
+}
+###
+
+///Channel
+DELETE  http://localhost:8000/api/v1/channel/leave/id/10
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Mg.GOmcV-8-pQe6r0sMreqG4CXPuy04WgBX5rF6UR4RpJs
+###
+
+POST  http://localhost:8000/api/v1/channel/leave/id/10
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Mg.GOmcV-8-pQe6r0sMreqG4CXPuy04WgBX5rF6UR4RpJs
+
+###
+POST  http://localhost:8000/api/v1/channel/removeUser/id/12?userId=2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Mg.GOmcV-8-pQe6r0sMreqG4CXPuy04WgBX5rF6UR4RpJs
+
+###
+
+POST  http://localhost:8000/api/v1/invite/channel/id/12
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Mg.GOmcV-8-pQe6r0sMreqG4CXPuy04WgBX5rF6UR4RpJs
+
+{
+    "userId": "6"
+}
+
+###
+
+GET  http://localhost:8000/api/v1/invite/id/5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Ng.fTjAMLeXg_OtbIFCB6JN53ZSaZHssQzfPr7FxymIhYs
+
+###
+
+DELETE  http://localhost:8000/api/v1/invite/id/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Ng.fTjAMLeXg_OtbIFCB6JN53ZSaZHssQzfPr7FxymIhYs
+
+###
+
+GET  http://localhost:8000/api/v1/user/invites
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Ng.fTjAMLeXg_OtbIFCB6JN53ZSaZHssQzfPr7FxymIhYs
+
+###
+GET  http://localhost:8000/api/v1/user/channels
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Ng.fTjAMLeXg_OtbIFCB6JN53ZSaZHssQzfPr7FxymIhYs
+
+###
+GET  http://localhost:8000/api/v1/user/info
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Ng.fTjAMLeXg_OtbIFCB6JN53ZSaZHssQzfPr7FxymIhYs
+
+###
+GET  http://localhost:8000/api/v1/invite/mark-as-seen/id/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Ng.fTjAMLeXg_OtbIFCB6JN53ZSaZHssQzfPr7FxymIhYs
+
+###
+GET  http://localhost:8000/api/v1/channel/id/11
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Ng.fTjAMLeXg_OtbIFCB6JN53ZSaZHssQzfPr7FxymIhYs
+
+###
+GET  http://localhost:8000/api/v1/invite/mark-as-seen/id/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Ng.fTjAMLeXg_OtbIFCB6JN53ZSaZHssQzfPr7FxymIh
+
+###
+POST http://localhost:8000/api/v1/emoji/message/id/113
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Mg.GOmcV-8-pQe6r0sMreqG4CXPuy04WgBX5rF6UR4RpJs
+
+{
+    "emoji": "😭" 
+}
+
+###
+PATCH http://localhost:8000/api/v1/emoji/message/id/116
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.Ng.fTjAMLeXg_OtbIFCB6JN53ZSaZHssQzfPr7FxymIhYs
+
+{
+    "emoji": "😍" 
+}
+###
+router.route("/message/channel/id/:id").post(authRequired, MessageCtrl.apiSendMessage)
+.get(authRequired, MessageCtrl.apiGetMessages)
+router.route("/message/id/:id").delete(authRequired, MessageCtrl.apiDeleteMessage).patch(authRequired, MessageCtrl.apiEditMessage)
+// INVITES
+router.route("/invite/channel/id/:id").post(authRequired, InviteCtrl.apiSendInvite)
+router.route("/invite/id/:id").get(authRequired, InviteCtrl.apiAcceptInvite).delete(authRequired, InviteCtrl.apiDeleteInvite)
+//CHANNEL
+router.route("/channel/create").post(authRequired, ChannelCtrl.apiCreateChannel)
+router.route("/channel/leave/id/:id").delete(authRequired, ChannelCtrl.apiLeaveChannel)
+router.route("/channel/removeUser/id/:id").post(authRequired, ChannelCtrl.apiRemoveUser)
+router.route("/channel/allowance/id/:id").post(authRequired, ChannelCtrl.apiChangeUserAllowance)
+
+router.route("/user/invites").get(authRequired, InviteCtrl.apiGetUserInvites)
+router.route("/user/channels").get(authRequired, ChannelCtrl.apiGetUserChannels)
