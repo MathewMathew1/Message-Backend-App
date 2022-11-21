@@ -16,7 +16,7 @@ import FriendInviteDao from './Dao/FriendsInvitesDao'
 import { FriendUser } from './types/types'
 
 const app = express()
-const PORT = 8000
+const PORT = process.env.PORT || 8000 
 app.use(express.json())
 app.use(bodyParser.json())
 let env = process.env.NODE_ENV || 'development';
@@ -148,9 +148,9 @@ const connection = {
   max: 10, // max number of clients in the pool
   idleTimeoutMillis: 30000,
 }
-console.log(connection)
-const dbConnection = new Pool(connection)
 
+const dbConnection = new Pool(connection)
+console.log(dbConnection)
 AuthenticationDAO.injectDB(dbConnection)
 MessageDAO.injectDB(dbConnection)
 ChannelDAO.injectDB(dbConnection)
