@@ -82,7 +82,6 @@ io.use(async function(socket, next){
   .on("connection", (socket: any) => {
     socket.on("join-chatroom", (room: string) => {
       if(isNaN(parseInt(room))){
-        console.log("error Lies there")
         return 
       }
       const joinRoom = async () => {
@@ -159,3 +158,4 @@ FriendInviteDao.injectDB(dbConnection)
 instrument(io, {auth: false})
 
 export {io}
+console.log("afsd")
