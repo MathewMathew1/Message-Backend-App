@@ -135,16 +135,20 @@ io.use(async function(socket, next){
   });
 });
 
+const host = env==='development'? 'localhost': "containers-us-west-114.railway.app"
+const port = env==='development'? 5432: 7122
+const database = env==='development'? "MessageApp" : "railway"
+
 const connection = {
   user: process.env.POSTGRESQL_USER, 
-  database: process.env.POSTGRESQL_DATABASE, 
+  database: database, 
   password: process.env.POSTGRESQL_PASSWORD, 
-  host: 'localhost', 
-  port: 5432, 
+  host: host, 
+  port: port, 
   max: 10, // max number of clients in the pool
   idleTimeoutMillis: 30000,
 }
-
+console.log(connection)
 const dbConnection = new Pool(connection)
 
 AuthenticationDAO.injectDB(dbConnection)
@@ -158,4 +162,3 @@ FriendInviteDao.injectDB(dbConnection)
 instrument(io, {auth: false})
 
 export {io}
-console.log("afsd")
