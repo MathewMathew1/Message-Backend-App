@@ -24,7 +24,7 @@ if(env==='development'){
   app.use(cors({origin: ["http://localhost:3000","https://socket.io"]}))
 }
 else{
-  app.use(cors({origin: ["https://socket.io", "https://main--oliphant.netlify.app"]}))
+  app.use(cors({origin: ["https://socket.io", "https://oliphant.netlify.app"]}))
 }
 
 dotenv.config()
@@ -40,7 +40,7 @@ const server = app.listen(PORT, () => {
 
 const io = new Server(server, {
   cors: {
-    origin: env==='development'? ["http://localhost:3000","https://admin.socket.io"]:  ["https://main--oliphant.netlify.app","https://admin.socket.io"]
+    origin: env==='development'? ["http://localhost:3000","https://admin.socket.io"]:  ["https://oliphant.netlify.app","https://admin.socket.io"]
   }
 })
 
