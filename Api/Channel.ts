@@ -139,7 +139,7 @@ export default class ChannelCtrl {
 
             const channelId: number = parseInt(req.params.id)
             const changedUserId: number = req.body.userId
-            const userInviteAbility: boolean = req.body.canInvite
+            const userInviteAbility: boolean = req.body.canInvite == "true"
             
             if(isNaN(channelId)) return res.status(500).json({error: "Missing channel id in param"})
             
@@ -152,6 +152,8 @@ export default class ChannelCtrl {
             let changingAllowance = await ChannelDAO.changeUserAbilityToInvite(changedUserId, channelId, userInviteAbility)
 
             if(changingAllowance?.error) return res.status(500).json({error: "Unexpected error"}) 
+
+            io.to(channelId.toString()).emit("user-allowance-changed", {userId: changedUserId, userInviteAbility})
             
             return res.status(201).json({status: "success"})
         }

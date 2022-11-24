@@ -150,7 +150,7 @@ const connection = {
 }
 
 const dbConnection = new Pool(connection)
-console.log(dbConnection)
+
 AuthenticationDAO.injectDB(dbConnection)
 MessageDAO.injectDB(dbConnection)
 ChannelDAO.injectDB(dbConnection)
