@@ -7,6 +7,7 @@ export type UserType = {
 
 export interface IGetUserAuthInfoRequest extends Request {
   user?: UserType // or any other type
+  channelId?: number
 }
 
 declare module 'socket.io' {

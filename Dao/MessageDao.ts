@@ -21,7 +21,7 @@ export default class MessageDAO {
 
             let message = await connection.query(`INSERT INTO message (message_text, user_of_message, channel_id) 
                 VALUES ('${messageText}', '${userId}', '${channelId}') RETURNING channel_id, date_of_posting, edited_on,  
-                user_of_message  AS user_id, message_text`)
+                user_of_message  AS user_id, message_text, id`)
             return {success: true, message: message.rows[0]}
         } catch (e) {
             console.error(e)
@@ -76,6 +76,17 @@ export default class MessageDAO {
             
             if(message.rowCount === 0) return {success: false, message: "Unable to edit message"}
             return {success: true, message: message.rows[0]}
+        } catch (e) {
+            console.error(e)
+            return({success: false, error: e})
+        } 
+    }
+
+    static async getMessageChannelId(messageId: number) {
+        try{
+            let result = await connection.query(`SELECT channel_id from message Where id = '${messageId}'`)
+            
+            return result.rows[0].channel_id
         } catch (e) {
             console.error(e)
             return({success: false, error: e})
