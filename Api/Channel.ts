@@ -20,7 +20,7 @@ export default class ChannelCtrl {
             let response = await ChannelDAO.createChannel(req.user.id, channelName)
 
             if(response.error) return res.status(500).json({error: "Unexpected error"}) 
-            console.log(response.userChannel)
+
             return res.status(201).json({channel: {...response.channel, ...response.userChannel}})
         }
         catch (e) {

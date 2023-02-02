@@ -37,7 +37,7 @@ export default class ChannelDAO {
         try{
             const userChannel = await connection.query(`SELECT * FROM channel_user 
                 WHERE channel_id='${channelId}' And user_id='${userId}'`)
-            console.log(userChannel.rowCount===0 || userChannel.rows[0].is_owner_of_channel===false)
+
             if(userChannel.rowCount===0 || userChannel.rows[0].is_owner_of_channel===false) return {isOwner: false}
             return {isOwner: true}
         } catch (e) {
