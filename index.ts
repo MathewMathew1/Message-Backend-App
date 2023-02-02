@@ -29,6 +29,7 @@ else{
 
 dotenv.config()
 
+app.use("/healthCheck", (_req, res) => res.status(200).json({healthy: "healthy"}))
 app.use("/api/v1/", router)
 app.use("*", (_req, res) => res.status(404).json({error: "Not found"}))
 
