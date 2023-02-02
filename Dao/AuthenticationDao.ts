@@ -32,7 +32,10 @@ export default class AuthenticationDAO {
         try{
             let user = await connection.query(`SELECT * FROM user_ WHERE username='${username}'`)
             user = user.rows[0]
+            if(user==undefined) return {error: "invalid password"}
+            
             if(await bcrypt.compare(password, user.password)) return {id: user.id.toString()}
+            
             return {error: "invalid password"}  
         } catch (e) {
             console.log(e)
