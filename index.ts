@@ -136,8 +136,8 @@ io.use(async function(socket, next){
   });
 });
 
-const host = env==='development'? 'localhost': "containers-us-west-114.railway.app"
-const port = env==='development'? 5432: 7122
+const host = env==='development'? 'localhost': "roundhouse.proxy.rlwy.net"
+const port = env==='development'? 5432: 18359
 const database = env==='development'? "MessageApp" : "railway"
 
 const connection = {
